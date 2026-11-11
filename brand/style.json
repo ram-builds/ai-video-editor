@@ -1,0 +1,72 @@
+{
+  "name": "Tracking Marks",
+  "version": 1,
+  "handle": "@vfxvaibhav",
+  "canvas": { "width": 1080, "height": 1920, "fps": 30 },
+  "safe_zone_px": { "top": 220, "bottom": 420, "right": 120, "left_margin": 96 },
+  "colors": {
+    "cobalt": "#2B4BFF",
+    "marker": "#FF6A1A",
+    "caption": "#FFFFFF",
+    "filler": "#A7B0C8",
+    "ink": "#101116",
+    "plate": "#F4F5F7"
+  },
+  "fonts": {
+    "words": { "family": "Archivo", "width": 125, "weight_caption": 850, "weight_display": 900 },
+    "data": { "family": "JetBrains Mono", "weight": 700 },
+    "hindi": { "family": "Anek Devanagari", "width": 125, "weight": 800 }
+  },
+  "captions": {
+    "align": "left",
+    "x": 96,
+    "baseline_y": 1230,
+    "words_per_chunk": [1, 3],
+    "max_chars_per_line": 14,
+    "max_lines": 2,
+    "lead_frames": 2,
+    "sizes_px": { "depth_title": 324, "number": 140, "keyword_tape": 116, "caption": 72, "filler": 44, "slate": 34 },
+    "keyword_tape": { "bg": "cobalt", "fg": "#FFFFFF", "radius": 0, "max_on_screen": 1, "wipe_frames": 3 },
+    "number_style": { "font": "data", "marker_cross": true, "scale_from": 0.92, "frames": 4 },
+    "hinglish": "latin by default; devanagari only for a single standout keyword",
+    "never": ["karaoke word highlight", "emoji in captions", "more than one tape on screen"]
+  },
+  "moves": {
+    "tracking_lock": { "use": "highlight what you point at", "sfx": "soft click" },
+    "cobalt_tape": { "use": "one keyword per sentence", "sfx": "tape zip" },
+    "shot_slate": { "use": "chapter labels SH010/SH020/SH030", "position": "top-left inside safe zone", "sfx": null },
+    "depth_title": { "use": "hook only, once per reel", "style": "outline then cobalt fill", "sfx": "sub thump" },
+    "scan_wipe": { "use": "transition to a full-screen card", "frames": 6, "sfx": "rising tick" },
+    "reality_check": { "use": "honest caveat", "grade": "saturation 0, contrast +15", "sfx": "music drops one beat" },
+    "render_queue_cta": { "use": "comment-keyword CTA", "starts_at_fraction": 0.75, "sfx": "render-done chime" },
+    "punch_in": { "keyword_scale": 1.12, "punchline_scale": 1.25, "ease_out_frames": 8 }
+  },
+  "pacing": {
+    "length_s": [25, 45],
+    "hook_s": 3,
+    "first_visual_change_by_s": 1.5,
+    "max_gap_between_visual_changes_s": 3,
+    "cut_pauses_over_s": 0.3,
+    "target_wpm": { "hinglish": [210, 235], "english": [190, 210] },
+    "chapters": { "count": 3, "length_s": [6, 7] },
+    "ending": "no end card; last frame matches first frame for loop",
+    "hook_formulas": ["promise a fix", "result as a number", "proof in the frame", "contrarian", "challenge the assumption"]
+  },
+  "grade": {
+    "shadows": { "hue_deg": 225, "saturation_pct": 12 },
+    "skin": "protect on skin line",
+    "highlights": "neutral, roll off at 95 IRE",
+    "contrast": 8,
+    "pivot": 0.435,
+    "saturation": 95
+  },
+  "audio": {
+    "integrated_lufs": -14,
+    "true_peak_dbtp": -1,
+    "max_lra_lu": 4,
+    "voice_chain": ["highpass 80Hz", "de-ess", "compress 3:1", "limit"],
+    "music_bed_lufs": -24,
+    "duck_db": 6,
+    "max_silence_s": 0.3
+  }
+}
