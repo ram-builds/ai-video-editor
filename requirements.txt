@@ -1,0 +1,7 @@
+# FFmpeg 7.1+ must be on PATH (uses the -/filter_complex option)
+openai-whisper
+rembg[cpu]
+onnxruntime
+fonttools
+pillow
+numpy
